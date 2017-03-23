@@ -1,4 +1,5 @@
 
+var util = require('util');
 var fib = function(num) {
     var result = 0;
     if (num < 2) {
@@ -19,4 +20,3 @@ var api = {
 };
 
 application.setInterface(api);
-
