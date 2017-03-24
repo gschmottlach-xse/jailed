@@ -1,7 +1,7 @@
 
 /**
  * Timeout demo
- * 
+ *
  * Performs a heavy calculation within a Plugin, controls the
  * execution time. The Plugin runs in a separate and restricted
  * process which has no access to the external environment, it only
@@ -67,6 +67,5 @@ var init = function() {
     countdownInterval = setInterval(countdown, 1000);
 }
 
-var plugin = new jailed.Plugin(__dirname+'/plugin.js', {}, {secure: false, expose: []});
+var plugin = new jailed.Plugin(__dirname+'/plugin.js', {}, {secure: true, expose: ['require']});
 plugin.whenConnected(init);
-
